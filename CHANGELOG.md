@@ -2,6 +2,8 @@
 
 ## Last Changes
 
+- [#10](https://github.com/LaxarJS/laxar_patterns/issues/10): errors: implemented new publisher for the didEncounterError event
+  NEW FEATURE: See ticket for details
 - [#9](https://github.com/LaxarJS/laxar_patterns/issues/9): jshintrc: disabled enforcement of dot notation for object property access.
 - [#5](https://github.com/LaxarJS/laxar_patterns/issues/5): Fixed jshint violation
 
