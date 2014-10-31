@@ -2,6 +2,7 @@
 
 ## Last Changes
 
+- [#80](https://github.com/LaxarJS/laxar_uikit/issues/80): footprint: removed underscore dependency 
 - [#24](https://github.com/LaxarJS/laxar_patterns/issues/24): refactoring: use `laxar.string` rather than `laxar.text`
 
 
