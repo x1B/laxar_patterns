@@ -29,20 +29,20 @@ The resource patterns cover events starting with the following topics:
   * `validateRequest`, `willValidate` and `didValidate`
   * `saveRequest`, `willSave` and `didSave`
   
-[more on resources](./patterns/resources.md)
+[more on resources »](./patterns/resources.md)
 
 
 ### Actions
 
 Widgets may publish _requests for action_ to indicate that the user has triggered some functionality outside of their own scope.
 Depending on the page configuration, other widgets will respond to these actions in whatever way is appropriate or configured for them.
-Widgets may respond using the [_will/did_-mechanism](//github.com/LaxarJS/laxar/treee/master/docs/manuals/events.md#request-events), for long running actions.
+Widgets may respond using the [_will/did_-mechanism](//github.com/LaxarJS/laxar/tree/master/docs/manuals/events.md#request-events), for long running actions.
 
 The action patterns cover events starting with the following topics:
 
   * `takeActionRequest`, `willTakeAction` and `didTakeAction`
   
-[more on actions](./patterns/actions.md)
+[more on actions »](./patterns/actions.md)
 
 
 ### Flags
@@ -55,7 +55,7 @@ The flag pattern covers events starting with the following topics:
 
   * `didChangeFlag`
 
-[more on flags](./patterns/flags.md)
+[more on flags »](./patterns/flags.md)
 
 
 ### Errors
@@ -67,4 +67,4 @@ The error pattern covers events starting with the following topics:
 
   * `didEncounterError`
 
-[more on errors](./patterns/errors.md)
+[more on errors »](./patterns/errors.md)
