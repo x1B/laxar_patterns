@@ -11,7 +11,7 @@ When widgets respond to an action request, they can do so _asynchronously_ using
 This means that actions can have a _duration_, which is useful for longer running tasks such as performing a search.
 The duration can in turn be used by yet other widgets, for example to show a progress indicator every time that an action on the page runs for more than, say, 200 milliseconds.
 
-If you are familiar with the _[signal/slot](http://qt-project.org/doc/qt-5/signalsandslots.html)_ mechanism, you can think of actions as the named, asynchronous counterpart to _n:m_ signal/slot connections.
+If you are familiar with _[Qt's signal/slot](http://qt-project.org/doc/qt-5/signalsandslots.html)_ mechanism, you may think of an action as the named, asynchronous counterpart to an _n:m_ signal/slot connection.
 
 ## Action Requests and Will/Did-Responses
 

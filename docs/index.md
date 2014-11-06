@@ -1,7 +1,7 @@
 # LaxarJS Patterns
 
 To allow for widgets to cooperate without tight coupling, it is very useful to share a basic event vocabulary.
-The LaxarJS Runtime already defines the semantics of [core event patterns](//github.com/LaxarJS/laxar/treee/master/docs/manuals/events.md#core-patterns).
+The LaxarJS Runtime already defines the semantics of [core event patterns](//github.com/LaxarJS/laxar/blob/master/docs/manuals/events.md#core-patterns).
 For application-level events, _LaxarJS Patterns_ provides an additional vocabulary, which may be grouped into a handful of _pattern families__.
 Before starting with the patterns, make sure that you are familiar with the [LaxarJS Core Concepts](//github.com/LaxarJS/laxar/blob/master/docs/concepts.md) and the [LaxarJS events manual](//github.com/LaxarJS/laxar/blob/master/docs/manuals/events.md).
 
@@ -18,8 +18,8 @@ Widgets define _what events_ generally concern them, but the page configuration 
 
 ### Resources
 
-Possibly the most important family of patterns, resource events deals with sharing, validating and persisting application _resources_.
-Here, _resource_ usually refers to a [JSON](http://json.org) representation of a [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) resource, for example in [HAL](http://tools.ietf.org/html/draft-kelly-json-hal-06) format.
+Possibly the most important family of patterns, _resource events_ deals with sharing, validating and persisting application _resources_.
+Here, _resource_ usually refers to a [JSON](http://json.org) representation of a [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) resource, for example in [HAL](http://tools.ietf.org/html/draft-kelly-json-hal-06) format.
 However, LaxarJS and the patterns described here do not actually make assumptions about the origin or the internal structure of resources, except that they are directly representable as JSON objects.
 This means that it is perfectly acceptable to obtain resources through a different mechanism than HTTP (such as _WebSockets_ or _localStorage_).
 
@@ -36,9 +36,9 @@ The resource patterns cover events starting with the following topics:
 
 Widgets may publish _requests for action_ to indicate that the user has triggered some functionality outside of their own scope.
 Depending on the page configuration, other widgets will respond to these actions in whatever way is appropriate or configured for them.
-Widgets may respond using the [_will/did_-mechanism](//github.com/LaxarJS/laxar/tree/master/docs/manuals/events.md#request-events), for long running actions.
+Widgets may respond using the [_will/did_-mechanism](//github.com/LaxarJS/laxar/blob/master/docs/manuals/events.md#request-events), for long running actions.
 
-The action patterns cover events starting with the following topics:
+The actions pattern covers events starting with the following topics:
 
   * `takeActionRequest`, `willTakeAction` and `didTakeAction`
   
