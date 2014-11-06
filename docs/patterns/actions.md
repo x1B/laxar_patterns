@@ -1,4 +1,4 @@
-[« return to the patterns overview](index.md)
+[« return to the patterns overview](../index.md)
 
 # Action Patterns
 

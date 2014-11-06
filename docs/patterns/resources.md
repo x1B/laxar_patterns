@@ -1,6 +1,6 @@
-[« return to the patterns overview](index.md)
+[« return to the patterns overview](../index.md)
 
-# Resource Patterns for LaxarJS Applications
+# Resource Patterns
 
 Resource events are essential to any non-trivial LaxarJS application, as they allow to share application resources and to collaborate on them.
 Because events are always delivered _by copy_, there is no danger of widgets and activities performing conflicting operations on shared mutable state.
@@ -29,17 +29,21 @@ However, the slave can never change _which_ position is currently the _selected-
 The identity and initial state of a resource is published through the _didReplace_ event by the resource master.
 Modifications to a resource may be published through the _didUpdate_ event, by master or slaves.
 
-Event name                 | Payload Attribute | Description
----------------------------|-------------------| ------------------------------------------------------------
-`didReplace.{resource}`    |                   | _published by a resource master to define state and identity of a shared resource_
-                           | `resource         | the topic through which the resource is shared (used in the payload _as well as_ in the event name)
-                           | `data`            | the (initial or new) state of the resource
-`didUpdate.{resource}`     |                   | _published by a resource master or by its slaves to publish modifications to the state of a shared resource_
-                           | `resource`        | _see above_
-                           | `patches`         | A [JSON-Patch](https://tools.ietf.org/html/rfc6902) document (an array representing a sequence of incremental modifications)
+Event name                 | Payload Attribute | Type   | Description
+---------------------------|-------------------|--------|-------------------------------------------------------------
+`didReplace.{resource}`    |                   |        | _published by a resource master to define state and identity of a shared resource_
+                           | `resource         | string | the topic through which the resource is shared (used in the payload _as well as_ in the event name)
+                           | `data`            | object | the (initial or new) state of the resource
+`didUpdate.{resource}`     |                   |        | _published by a resource master or by its slaves to publish modifications to the state of a shared resource_
+                           | `resource`        | string | _see above_
+                           | `patches`         | array  | A [JSON-Patch](https://tools.ietf.org/html/rfc6902) document (an array representing a sequence of incremental modifications)
 
 Because modifications _(didUpdate)_ are transmitted incrementally, the resource master may use the `patches` attribute of the event payload to persist modifications using an [HTTP PATCH](http://tools.ietf.org/html/rfc5789) request.
 To create and apply patches, you require `laxar_patterns` into your widget controller and use `createPatch` and `applyPatch` from the `laxar_patterns.json` API.
+
+When sharing resources, keep in mind that resource events (like all LaxarJS events) are cloned for each receiver.
+This makes it easy to write robust applications, but can lead to inefficiencies if very large resources are published.
+In some cases, it might be worthwhile to factor out sub-resources relevant to the consumers.
 
 
 ## Asynchronous Resource Validation
